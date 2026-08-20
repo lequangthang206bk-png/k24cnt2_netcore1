@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../LQThang-001MVC/LQThang-001MVC.csproj" />
+  <Project Path="LQThang-001/LQThang-001.csproj" />
+</Solution>
