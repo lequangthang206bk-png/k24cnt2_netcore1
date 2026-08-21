@@ -1,11 +1,204 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model List<LQThang_001MVC.Models.Product>
+
+@{
+    ViewData["Title"] = "Trang chủ";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-4">
+
+    <!-- BANNER -->
+
+    <div class="p-5 mb-4 bg-dark text-white rounded-3">
+
+        <div class="container-fluid py-4">
+
+            <h1 class="display-5 fw-bold">
+                CỬA HÀNG ĐIỆN THOẠI
+            </h1>
+
+            <p class="fs-4">
+                Điện thoại chính hãng - Giá tốt - Bảo hành uy tín
+            </p>
+
+            <a asp-controller="Product"
+               asp-action="Index"
+               class="btn btn-primary btn-lg">
+
+                Xem sản phẩm
+
+            </a>
+
+        </div>
+
+    </div>
 
 
-    <h2> Xin Chào ,@ViewBag.name</h2>
+    <!-- TÌM KIẾM -->
+
+    <div class="mb-5">
+
+        <form asp-controller="Home"
+              asp-action="Index"
+              method="get">
+
+            <div class="input-group">
+
+                <input type="text"
+                       name="search"
+                       value="@ViewBag.Search"
+                       class="form-control form-control-lg"
+                       placeholder="Tìm kiếm điện thoại hoặc hãng..." />
+
+                <button type="submit"
+                        class="btn btn-primary">
+
+                    🔍 Tìm kiếm
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <!-- LỜI CHÀO -->
+
+    <div class="mb-4">
+
+        <h2>
+            Xin chào, @ViewBag.name
+        </h2>
+
+    </div>
+
+
+    <!-- DANH SÁCH -->
+
+    <h2 class="mb-4">
+        Điện thoại nổi bật
+    </h2>
+
+
+    @if (Model == null || Model.Count == 0)
+    {
+        <div class="alert alert-warning">
+
+            Không tìm thấy sản phẩm.
+
+        </div>
+    }
+    else
+    {
+        <div class="row">
+
+            @foreach (var product in Model)
+            {
+                <div class="col-md-3 mb-4">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <!-- ẢNH -->
+                        @if (!string.IsNullOrWhiteSpace(product.Image))
+                        {
+                            <img src="@product.Image"
+                                 class="card-img-top product-image"
+                                 alt="@product.Name" />
+                        }
+                        else
+                        {
+                            <div class="no-image">
+
+                                Không có ảnh
+
+                            </div>
+                        }
+
+
+                        <!-- THÔNG TIN -->
+
+                        <div class="card-body d-flex flex-column">
+
+                            <h5 class="card-title">
+
+                                @product.Name
+
+                            </h5>
+
+                            <p class="text-muted">
+
+                                @product.Brand
+
+                            </p>
+
+                            <p class="text-danger fw-bold fs-5">
+
+                                @product.Price.ToString("N0") VNĐ
+
+                            </p>
+
+                            <p>
+
+                                Còn lại:
+                                <strong>
+                                    @product.Quantity
+                                </strong>
+
+                            </p>
+
+                            <p class="text-secondary">
+
+                                @product.Description
+
+                            </p>
+
+                            <button class="btn btn-primary w-100 mt-auto">
+
+                                Xem sản phẩm
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+
+        </div>
+    }
+
 </div>
+
+
+<style>
+
+    .product-image {
+        width: 100%;
+        height: 280px;
+        object-fit: contain;
+        padding: 15px;
+        background: white;
+    }
+
+    .no-image {
+        width: 100%;
+        height: 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f1f1f1;
+        color: #777;
+    }
+
+    .card {
+        transition: 0.2s;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+        }
+
+</style>

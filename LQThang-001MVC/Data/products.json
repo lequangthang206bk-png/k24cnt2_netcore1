@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 1,
+    "Name": "iPhone 15",
+    "Brand": "Apple",
+    "Price": 18990000,
+    "Quantity": 10,
+    "Image": "/images/iphone15.jpg",
+    "Description": "iPhone 15 ch\u00EDnh h\u00E3ng"
+  },
+  {
+    "Id": 2,
+    "Name": "Samsung Galaxy S24U",
+    "Brand": "Samsung",
+    "Price": 32990000,
+    "Quantity": 15,
+    "Image": "/images/s24.jpg",
+    "Description": "Samsung Galaxy S24U ch\u00EDnh h\u00E3ng v\u1EDBi cam \u0111\u1EB9p v\u00E0 dlp si\u00EAu tr\u00E2u "
+  },
+  {
+    "Id": 3,
+    "Name": "Xiaomi 14",
+    "Brand": "Xiaomi",
+    "Price": 14990000,
+    "Quantity": 20,
+    "Image": "/images/xiaomi14.jpg",
+    "Description": "Xiaomi 14 ch\u00EDnh h\u00E3ng"
+  },
+  {
+    "Id": 4,
+    "Name": "OPPO Reno 12",
+    "Brand": "OPPO",
+    "Price": 11990000,
+    "Quantity": 12,
+    "Image": "/images/opporeno12.jpg",
+    "Description": "OPPO Reno 12 ch\u00EDnh h\u00E3ng"
+  }
+]

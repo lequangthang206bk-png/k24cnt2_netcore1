@@ -1,0 +1,27 @@
+## Visual Studio / IDE
+.vs/
+.vscode/
+*.suo
+*.user
+
+## Build outputs
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+
+## Visual Studio cache
+*.cache
+*.pdb
+*.sln.iml
+
+## ASP.NET Core
+appsettings*.Secret.json
+*.env
+*.pem
+
+## OS
+.DS_Store
+Thumbs.db

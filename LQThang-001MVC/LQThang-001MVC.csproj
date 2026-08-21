@@ -7,4 +7,10 @@
     <RootNamespace>LQThang_001MVC</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="LQThang_001MVC\" />
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
 </Project>
