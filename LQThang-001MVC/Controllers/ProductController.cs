@@ -13,40 +13,30 @@ namespace LQThang_001MVC.Controllers
             _productService = productService;
         }
 
-        // =========================
-        // DANH SÁCH
-        // =========================
-
         public IActionResult Index()
         {
             var products = _productService.GetAll();
 
+            ViewData["Title"] = "Danh sách sản phẩm";
+            ViewBag.Message = "Quản lý sản phẩm";
+
             return View(products);
         }
-
-
-        // =========================
-        // THÊM
-        // =========================
 
         public IActionResult Create()
         {
             return View();
         }
 
-
         [HttpPost]
         public IActionResult Create(Product product)
         {
             _productService.Add(product);
 
+            TempData["ThongBao"] = "Thêm sản phẩm thành công!";
+
             return RedirectToAction("Index");
         }
-
-
-        // =========================
-        // SỬA
-        // =========================
 
         public IActionResult Edit(int id)
         {
@@ -60,19 +50,15 @@ namespace LQThang_001MVC.Controllers
             return View(product);
         }
 
-
         [HttpPost]
         public IActionResult Edit(Product product)
         {
             _productService.Update(product);
 
+            TempData["ThongBao"] = "Cập nhật sản phẩm thành công!";
+
             return RedirectToAction("Index");
         }
-
-
-        // =========================
-        // XÓA
-        // =========================
 
         public IActionResult Delete(int id)
         {
@@ -86,11 +72,12 @@ namespace LQThang_001MVC.Controllers
             return View(product);
         }
 
-
         [HttpPost]
         public IActionResult DeleteConfirmed(int id)
         {
             _productService.Delete(id);
+
+            TempData["ThongBao"] = "Xóa sản phẩm thành công!";
 
             return RedirectToAction("Index");
         }

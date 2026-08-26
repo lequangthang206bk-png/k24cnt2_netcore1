@@ -14,14 +14,14 @@ namespace LQThang_001MVC.Controllers
             _productService = productService;
         }
 
-        // Trang chủ
+       
         public IActionResult Index(string? search)
         {
             ViewBag.name = "Lê Quang Thắng";
 
             var products = _productService.GetAll();
 
-            // Tìm kiếm theo tên hoặc hãng
+            
             if (!string.IsNullOrWhiteSpace(search))
             {
                 products = products
@@ -44,7 +44,7 @@ namespace LQThang_001MVC.Controllers
             return View(products);
         }
 
-        // Trang lỗi
+        
         [ResponseCache(
             Duration = 0,
             Location = ResponseCacheLocation.None,
