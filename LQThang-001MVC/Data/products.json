@@ -15,7 +15,7 @@
     "Price": 32990000,
     "Quantity": 15,
     "Image": "/images/s24.jpg",
-    "Description": "Samsung Galaxy S24U ch\u00EDnh h\u00E3ng v\u1EDBi cam \u0111\u1EB9p v\u00E0 dlp si\u00EAu tr\u00E2u "
+    "Description": "Samsung Galaxy S24 Ultra ch\u00EDnh h\u00E3ng v\u1EDBi camera \u0111\u1EB9p v\u00E0 hi\u1EC7u n\u0103ng m\u1EA1nh m\u1EBD"
   },
   {
     "Id": 3,
@@ -34,5 +34,95 @@
     "Quantity": 12,
     "Image": "/images/opporeno12.jpg",
     "Description": "OPPO Reno 12 ch\u00EDnh h\u00E3ng"
+  },
+  {
+    "Id": 5,
+    "Name": "MacBook Air M3",
+    "Brand": "Apple",
+    "Price": 27990000,
+    "Quantity": 8,
+    "Image": "/images/macbookairm3.jpg",
+    "Description": "MacBook Air M3 thi\u1EBFt k\u1EBF m\u1ECFng nh\u1EB9, hi\u1EC7u n\u0103ng m\u1EA1nh m\u1EBD"
+  },
+  {
+    "Id": 6,
+    "Name": "ASUS ROG Strix G16",
+    "Brand": "ASUS",
+    "Price": 38990000,
+    "Quantity": 6,
+    "Image": "/images/rogstrixg16.jpg",
+    "Description": "Laptop gaming ASUS ROG Strix G16 hi\u1EC7u n\u0103ng cao"
+  },
+  {
+    "Id": 7,
+    "Name": "Dell Inspiron 15",
+    "Brand": "Dell",
+    "Price": 17990000,
+    "Quantity": 10,
+    "Image": "/images/dellinspiron15.jpg",
+    "Description": "Laptop Dell Inspiron 15 ph\u00F9 h\u1EE3p h\u1ECDc t\u1EADp v\u00E0 l\u00E0m vi\u1EC7c"
+  },
+  {
+    "Id": 8,
+    "Name": "iPad Air M2",
+    "Brand": "Apple",
+    "Price": 16990000,
+    "Quantity": 14,
+    "Image": "/images/ipadairm2.jpg",
+    "Description": "iPad Air M2 m\u00E0n h\u00ECnh \u0111\u1EB9p, hi\u1EC7u n\u0103ng m\u1EA1nh m\u1EBD"
+  },
+  {
+    "Id": 9,
+    "Name": "Samsung Galaxy Tab S9",
+    "Brand": "Samsung",
+    "Price": 18990000,
+    "Quantity": 9,
+    "Image": "/images/galaxytabs9.jpg",
+    "Description": "Samsung Galaxy Tab S9 ch\u00EDnh h\u00E3ng"
+  },
+  {
+    "Id": 10,
+    "Name": "AirPods Pro 2",
+    "Brand": "Apple",
+    "Price": 5490000,
+    "Quantity": 25,
+    "Image": "/images/airpodspro2.jpg",
+    "Description": "Tai nghe AirPods Pro 2 ch\u1ED1ng \u1ED3n ch\u1EE7 \u0111\u1ED9ng"
+  },
+  {
+    "Id": 11,
+    "Name": "Samsung Galaxy Buds3",
+    "Brand": "Samsung",
+    "Price": 3990000,
+    "Quantity": 18,
+    "Image": "/images/galaxybuds3.jpg",
+    "Description": "Tai nghe kh\u00F4ng d\u00E2y Samsung Galaxy Buds3"
+  },
+  {
+    "Id": 12,
+    "Name": "Apple Magic Mouse",
+    "Brand": "Apple",
+    "Price": 1990000,
+    "Quantity": 20,
+    "Image": "/images/magicmouse.jpg",
+    "Description": "Chu\u1ED9t kh\u00F4ng d\u00E2y Apple Magic Mouse thi\u1EBFt k\u1EBF hi\u1EC7n \u0111\u1EA1i"
+  },
+  {
+    "Id": 13,
+    "Name": "Logitech MX Master 3S",
+    "Brand": "Logitech",
+    "Price": 2490000,
+    "Quantity": 16,
+    "Image": "/images/mxmaster3s.jpg",
+    "Description": "Chu\u1ED9t Logitech MX Master 3S d\u00E0nh cho v\u0103n ph\u00F2ng v\u00E0 thi\u1EBFt k\u1EBF"
+  },
+  {
+    "Id": 14,
+    "Name": "Anker 737 Power Bank",
+    "Brand": "Anker",
+    "Price": 2990000,
+    "Quantity": 22,
+    "Image": "/images/anker737.jpg",
+    "Description": "Pin s\u1EA1c d\u1EF1 ph\u00F2ng Anker 737 dung l\u01B0\u1EE3ng cao, s\u1EA1c nhanh"
   }
 ]

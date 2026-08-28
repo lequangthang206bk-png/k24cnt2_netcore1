@@ -1,4 +1,5 @@
-﻿@model List<LQThang_001MVC.Models.Product>
+﻿```cshtml
+@model List<LQThang_001MVC.Models.Product>
 
 @{
     ViewData["Title"] = "Trang chủ";
@@ -24,7 +25,7 @@
                asp-action="Index"
                class="btn btn-primary btn-lg">
 
-                Xem sản phẩm
+                Xem tất cả sản phẩm
 
             </a>
 
@@ -126,19 +127,19 @@
 
                             </h5>
 
-                            <p class="text-muted">
+                            <p class="text-muted mb-2">
 
                                 @product.Brand
 
                             </p>
 
-                            <p class="text-danger fw-bold fs-5">
+                            <p class="text-danger fw-bold fs-5 mb-2">
 
                                 @product.Price.ToString("N0") VNĐ
 
                             </p>
 
-                            <p>
+                            <p class="mb-2">
 
                                 Còn lại:
                                 <strong>
@@ -147,17 +148,23 @@
 
                             </p>
 
-                            <p class="text-secondary">
+                            <p class="text-secondary product-description">
 
                                 @product.Description
 
                             </p>
 
-                            <button class="btn btn-primary w-100 mt-auto">
 
-                                Xem sản phẩm
+                            <!-- XEM CHI TIẾT -->
 
-                            </button>
+                            <a asp-controller="Product"
+                               asp-action="Details"
+                               asp-route-id="@product.Id"
+                               class="btn btn-primary w-100 mt-auto">
+
+                                Xem chi tiết
+
+                            </a>
 
                         </div>
 
@@ -201,4 +208,9 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
         }
 
+    .product-description {
+        min-height: 48px;
+    }
+
 </style>
+```

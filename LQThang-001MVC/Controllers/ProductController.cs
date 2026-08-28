@@ -13,6 +13,7 @@ namespace LQThang_001MVC.Controllers
             _productService = productService;
         }
 
+        // Danh sach san pham
         public IActionResult Index()
         {
             var products = _productService.GetAll();
@@ -23,11 +24,13 @@ namespace LQThang_001MVC.Controllers
             return View(products);
         }
 
+        // Hien thi form them san pham
         public IActionResult Create()
         {
             return View();
         }
 
+        // Xu ly them san pham
         [HttpPost]
         public IActionResult Create(Product product)
         {
@@ -38,6 +41,20 @@ namespace LQThang_001MVC.Controllers
             return RedirectToAction("Index");
         }
 
+        // Xem chi tiet san pham
+        public IActionResult Details(int id)
+        {
+            var product = _productService.GetById(id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            return View(product);
+        }
+
+        // Hien thi form sua san pham
         public IActionResult Edit(int id)
         {
             var product = _productService.GetById(id);
@@ -50,6 +67,7 @@ namespace LQThang_001MVC.Controllers
             return View(product);
         }
 
+        // Xu ly sua san pham
         [HttpPost]
         public IActionResult Edit(Product product)
         {
@@ -60,6 +78,7 @@ namespace LQThang_001MVC.Controllers
             return RedirectToAction("Index");
         }
 
+        // Hien thi trang xac nhan xoa
         public IActionResult Delete(int id)
         {
             var product = _productService.GetById(id);
@@ -72,6 +91,7 @@ namespace LQThang_001MVC.Controllers
             return View(product);
         }
 
+        // Xu ly xoa san pham
         [HttpPost]
         public IActionResult DeleteConfirmed(int id)
         {
