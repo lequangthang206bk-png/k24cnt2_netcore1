@@ -1,0 +1,53 @@
+@model LQTMember
+
+@{
+    ViewData["Title"] = "Chỉnh sửa thành viên";
+}
+
+<div class="form-page">
+    <div class="form-intro">
+        <span class="eyebrow">LESSON 07 · EDIT</span>
+        <h1>Chỉnh sửa thành viên</h1>
+        <p>Thay đổi dữ liệu và gửi lại Model để Controller cập nhật thành viên.</p>
+    </div>
+    <div class="form-card">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+            <input asp-for="LQTMemberId" type="hidden" />
+            <div class="form-group mb-3">
+                <label asp-for="LQTMemberId" class="form-label"></label>
+                <input asp-for="LQTMemberId" class="form-control" readonly />
+            </div>
+            <div class="row">
+                <div class="col-md-6 form-group mb-3">
+                    <label asp-for="LQTUserName" class="form-label"></label>
+                    <input asp-for="LQTUserName" class="form-control" />
+                    <span asp-validation-for="LQTUserName" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label asp-for="LQTPassword" class="form-label"></label>
+                    <input asp-for="LQTPassword" type="password" class="form-control" />
+                    <span asp-validation-for="LQTPassword" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label asp-for="LQTFullName" class="form-label"></label>
+                    <input asp-for="LQTFullName" class="form-control" />
+                    <span asp-validation-for="LQTFullName" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label asp-for="LQTEmail" class="form-label"></label>
+                    <input asp-for="LQTEmail" type="email" class="form-control" />
+                    <span asp-validation-for="LQTEmail" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-warning">Lưu thay đổi</button>
+                <a asp-action="Index" class="btn btn-light">Quay lại</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

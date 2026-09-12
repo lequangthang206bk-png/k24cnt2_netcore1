@@ -1,0 +1,28 @@
+@model LQTMember
+
+@{
+    ViewData["Title"] = "Thông tin member";
+}
+
+<div class="detail-page">
+    <div class="detail-header">
+        <div>
+            <span class="eyebrow">LESSON 07 · DETAILS</span>
+            <h1>Thông tin thành viên</h1>
+            <p>Đối tượng được truyền từ Controller sang View.</p>
+        </div>
+        <div class="detail-avatar">LQT</div>
+    </div>
+    <div class="detail-card">
+        <div class="detail-row"><span>Member ID</span><strong class="small-id">@Model.LQTMemberId</strong></div>
+        <div class="detail-row"><span>User Name</span><strong>@Model.LQTUserName</strong></div>
+        <div class="detail-row"><span>Password</span><strong>••••••••</strong></div>
+        <div class="detail-row"><span>Full Name</span><strong>@Model.LQTFullName</strong></div>
+        <div class="detail-row"><span>Email</span><strong>@Model.LQTEmail</strong></div>
+        <div class="detail-actions">
+            <a asp-action="Edit" asp-route-id="@Model.LQTMemberId" class="btn btn-warning">Chỉnh sửa</a>
+            <a asp-action="Delete" asp-route-id="@Model.LQTMemberId" class="btn btn-outline-danger">Xóa</a>
+            <a asp-action="Index" class="btn btn-light">Danh sách</a>
+        </div>
+    </div>
+</div>

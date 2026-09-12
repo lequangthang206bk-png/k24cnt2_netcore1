@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<section class="hero-card">
+    <div class="hero-content">
+        <span class="eyebrow"> Quản Lý Nhân Sự </span>
+        <h1>Quản lý thành viên với <span>LQT Model</span></h1>
+        <p class="lead"></p>
+        <div class="hero-actions">
+            <a asp-controller="LQTMember" asp-action="Index" class="btn btn-primary btn-lg px-4">Mở danh sách thành viên</a>
+            <a asp-controller="LQTMember" asp-action="Create" class="btn btn-light btn-lg px-4">+ Thêm thành viên</a>
+        </div>
+    </div>
+    <div class="hero-mark" aria-hidden="true">LQT</div>
+</section>
+
+<section class="feature-grid">
+    <div class="feature-card">
+        <div class="feature-icon">M</div>
+        <h3>Model</h3>
+        <p>LQTMember sử dụng thuộc tính và Data Annotations để mô tả dữ liệu và kiểm tra hợp lệ.</p>
+    </div>
+    <div class="feature-card">
+        <div class="feature-icon">C</div>
+        <h3>Controller</h3>
+        <p>LQTMemberController xử lý luồng dữ liệu và các thao tác CRUD của bài học.</p>
+    </div>
+    <div class="feature-card">
+        <div class="feature-icon">V</div>
+        <h3>View</h3>
+        <p>Các Razor View hiển thị danh sách, chi tiết, biểu mẫu thêm, sửa và xác nhận xóa.</p>
+    </div>
+</section>
+
+<section class="lesson-note">
+    <div>
+        <span class="eyebrow">Gợi ý học tập</span>
+        <h2>Thử thay đổi Model rồi quan sát View</h2>
+        
+    </div>
+    <a asp-controller="LQTMember" asp-action="GetMember" class="btn btn-outline-primary">Xem một member</a>
+</section>

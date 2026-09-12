@@ -1,0 +1,22 @@
+﻿@model LQTMember
+
+@{
+    ViewData["Title"] = "Xóa thành viên";
+}
+
+<div class="confirm-page">
+    <div class="confirm-icon">!</div>
+    <span class="eyebrow">LESSON 07 · DELETE</span>
+    <h1>Xác nhận xóa</h1>
+    <p>Bạn có chắc muốn xóa thành viên <strong>@Model.LQTFullName</strong> không?</p>
+    <div class="confirm-info">
+        <span>@Model.LQTUserName</span>
+        <span>@Model.LQTEmail</span>
+    </div>
+    <form asp-action="Delete" method="post" class="d-flex justify-content-center gap-2 flex-wrap">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="id" value="@Model.LQTMemberId" />
+        <button type="submit" class="btn btn-danger">Xác nhận xóa</button>
+        <a asp-action="Index" class="btn btn-light">Hủy bỏ</a>
+    </form>
+</div>

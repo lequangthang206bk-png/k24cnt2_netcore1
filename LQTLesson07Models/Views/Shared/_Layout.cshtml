@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LQThang Lesson 07</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg site-navbar">
+            <div class="container">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index"><span>LQT</span> Lesson 07</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Mở menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="LQTMember" asp-action="Index">Thành viên</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="LQTMember" asp-action="GetMembers">GetMembers</a></li>
+                        <li class="nav-item ms-lg-2"><a class="btn btn-primary btn-sm px-3" asp-controller="LQTMember" asp-action="Create">+ Thêm mới</a></li>
+                    </ul>
+                    <span class="navbar-text author-tag">LQThang</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container main-container">
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <span>© 2026 LQThang · Lesson 07 Models</span>
+            <span>ASP.NET Core MVC · LQT</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

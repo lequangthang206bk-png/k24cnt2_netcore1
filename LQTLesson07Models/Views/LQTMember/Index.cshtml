@@ -1,0 +1,79 @@
+@model IEnumerable<LQTMember>
+
+@{
+    ViewData["Title"] = "Danh sách thành viên";
+    var members = Model.ToList();
+}
+
+<div class="page-heading">
+    <div>
+        <span class="eyebrow">LESSON 07 · MODEL</span>
+        <h1>Danh sách thành viên</h1>
+        <p>Quản lý dữ liệu Nhân viên.</p>
+    </div>
+    <a asp-action="Create" class="btn btn-primary btn-lg">+ Thêm thành viên</a>
+</div>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show shadow-sm" role="alert">
+        <strong>Thành công!</strong> @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+<div class="stats-grid">
+    <div class="stat-card"><span>Tổng thành viên</span><strong>@members.Count</strong><small>Đang có trong danh sách</small></div>
+    <div class="stat-card"><span>Model</span><strong>LQT</strong><small>LQTMember</small></div>
+    <div class="stat-card"><span>Thao tác</span><strong>4</strong><small>Thêm · Sửa · Xem · Xóa</small></div>
+</div>
+
+<div class="table-card">
+    <div class="table-card-header">
+        <div>
+            <h2>Dữ liệu thành viên</h2>
+            <span>Thông tin được hiển thị từ Model.</span>
+        </div>
+        <a asp-action="GetMembers" class="btn btn-outline-secondary">Xem dạng cơ bản</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table member-table align-middle mb-0">
+            <thead>
+                <tr>
+                    <th>Member ID</th>
+                    <th>User Name</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th class="text-end">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in members)
+                {
+                    <tr>
+                        <td><span class="id-badge">@item.LQTMemberId[..8]</span></td>
+                        <td><strong>@item.LQTUserName</strong></td>
+                        <td>@item.LQTFullName</td>
+                        <td>@item.LQTEmail</td>
+                        <td>
+                            <div class="action-buttons justify-content-end">
+                                <a asp-action="GetMember" asp-route-id="@item.LQTMemberId" class="btn btn-sm btn-outline-info">Xem</a>
+                                <a asp-action="Edit" asp-route-id="@item.LQTMemberId" class="btn btn-sm btn-outline-warning">Sửa</a>
+                                <a asp-action="Delete" asp-route-id="@item.LQTMemberId" class="btn btn-sm btn-outline-danger">Xóa</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    @if (!members.Any())
+    {
+        <div class="empty-state">
+            <div class="empty-icon">LQT</div>
+            <h3>Chưa có thành viên</h3>
+            <p>Hãy thêm thành viên đầu tiên để bắt đầu.</p>
+            <a asp-action="Create" class="btn btn-primary">Thêm thành viên</a>
+        </div>
+    }
+</div>

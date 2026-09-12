@@ -1,0 +1,42 @@
+@{
+    ViewData["Title"] = "Danh sách thành viên";
+    int num = 0;
+}
+
+<div class="page-heading">
+    <div>
+        <span class="eyebrow">LESSON 07 · GET MEMBERS</span>
+        <h1>Danh sách thành viên</h1>
+        <p>Phiên bản hiển thị trực tiếp từ ViewBag.Members.</p>
+    </div>
+    <a asp-action="Create" class="btn btn-primary">+ Thêm mới</a>
+</div>
+
+<div class="table-card">
+    <div class="table-responsive">
+        <table class="table member-table align-middle mb-0">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Member ID</th>
+                    <th>User Name</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var member in ViewBag.Members)
+                {
+                    num++;
+                    <tr>
+                        <td>@num</td>
+                        <td class="small-id">@member.LQTMemberId</td>
+                        <td><strong>@member.LQTUserName</strong></td>
+                        <td>@member.LQTFullName</td>
+                        <td>@member.LQTEmail</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
