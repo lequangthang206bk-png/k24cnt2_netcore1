@@ -1,0 +1,32 @@
+﻿@model LqtLesson08Models.Models.LqtMember
+
+@{
+    ViewData["Title"] = "Xóa thành viên";
+}
+
+<div class="card shadow-sm border-0 border-start border-danger border-4">
+    <div class="card-header bg-white py-3">
+        <h3 class="mb-0 text-danger">Bạn có chắc chắn muốn xóa thành viên này?</h3>
+    </div>
+    <div class="card-body">
+        <dl class="row mb-0">
+            <dt class="col-sm-3 text-muted">@Html.DisplayNameFor(model => model.LqtMemberId)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LqtMemberId)</dd>
+
+            <dt class="col-sm-3 text-muted">@Html.DisplayNameFor(model => model.LqtUserName)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LqtUserName)</dd>
+
+            <dt class="col-sm-3 text-muted">@Html.DisplayNameFor(model => model.LqtFullName)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LqtFullName)</dd>
+
+            <dt class="col-sm-3 text-muted">@Html.DisplayNameFor(model => model.LqtEmail)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LqtEmail)</dd>
+        </dl>
+
+        <form asp-action="LqtDeleted" class="mt-4">
+            <input type="hidden" name="id" value="@Model.LqtMemberId" />
+            <input type="submit" value="Xác nhận xóa" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-secondary">Hủy bỏ</a>
+        </form>
+    </div>
+</div>
