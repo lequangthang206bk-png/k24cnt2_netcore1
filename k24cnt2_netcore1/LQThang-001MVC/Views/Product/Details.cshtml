@@ -1,0 +1,110 @@
+﻿@model LQThang_001MVC.Models.Product
+
+@{
+    ViewData["Title"] = "Chi tiết sản phẩm";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">
+                Chi tiết sản phẩm
+            </h3>
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <!-- Hinh anh san pham -->
+                <div class="col-md-5 text-center">
+
+                    <img src="@Model.Image"
+                         alt="@Model.Name"
+                         class="img-fluid rounded"
+                         style="max-height: 400px; object-fit: contain;" />
+
+                </div>
+
+                <!-- Thong tin san pham -->
+                <div class="col-md-7">
+
+                    <h2 class="mb-4">
+                        @Model.Name
+                    </h2>
+
+                    <div class="mb-3">
+                        <strong>Mã sản phẩm:</strong>
+                        <span>@Model.Id</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>Thương hiệu:</strong>
+                        <span>@Model.Brand</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>Giá:</strong>
+
+                        <span class="text-danger fw-bold fs-5">
+                            @Model.Price.ToString("N0") VNĐ
+                        </span>
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>Số lượng:</strong>
+
+                        <span>
+                            @Model.Quantity sản phẩm
+                        </span>
+                    </div>
+
+                    <div class="mb-3">
+
+                        <strong>Mô tả:</strong>
+
+                        <div class="border rounded p-3 mt-2 bg-light">
+                            @Model.Description
+                        </div>
+
+                    </div>
+
+                    <!-- Cac nut thao tac -->
+                    <div class="mt-4">
+
+                        <a asp-action="Edit"
+                           asp-route-id="@Model.Id"
+                           class="btn btn-warning me-2">
+
+                            Sửa sản phẩm
+
+                        </a>
+
+                        <a asp-action="Delete"
+                           asp-route-id="@Model.Id"
+                           class="btn btn-danger me-2">
+
+                            Xóa sản phẩm
+
+                        </a>
+
+                        <a asp-action="Index"
+                           class="btn btn-secondary">
+
+                            Quay lại
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

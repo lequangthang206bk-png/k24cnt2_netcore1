@@ -1,0 +1,52 @@
+@model LQTMember
+
+@{
+    ViewData["Title"] = "Thêm thành viên";
+}
+
+<div class="form-page">
+    <div class="form-intro">
+        <span class="eyebrow">LESSON 07 · CREATE</span>
+        <h1>Thêm thành viên</h1>
+        <p>Tạo một đối tượng LQTMember mới. Các thuộc tính bắt buộc sẽ được Model kiểm tra tự động.</p>
+    </div>
+    <div class="form-card">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+            <div class="form-group mb-3">
+                <label asp-for="LQTMemberId" class="form-label"></label>
+                <input class="form-control" value="Tự động tạo bằng Guid" readonly />
+            </div>
+            <div class="row">
+                <div class="col-md-6 form-group mb-3">
+                    <label asp-for="LQTUserName" class="form-label"></label>
+                    <input asp-for="LQTUserName" class="form-control" placeholder="Nhập tên đăng nhập" />
+                    <span asp-validation-for="LQTUserName" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label asp-for="LQTPassword" class="form-label"></label>
+                    <input asp-for="LQTPassword" type="password" class="form-control" placeholder="Nhập mật khẩu" />
+                    <span asp-validation-for="LQTPassword" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label asp-for="LQTFullName" class="form-label"></label>
+                    <input asp-for="LQTFullName" class="form-control" placeholder="Nhập họ và tên" />
+                    <span asp-validation-for="LQTFullName" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label asp-for="LQTEmail" class="form-label"></label>
+                    <input asp-for="LQTEmail" type="email" class="form-control" placeholder="example@email.com" />
+                    <span asp-validation-for="LQTEmail" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Lưu thành viên</button>
+                <a asp-action="Index" class="btn btn-light">Quay lại</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

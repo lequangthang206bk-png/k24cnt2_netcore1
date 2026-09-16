@@ -1,0 +1,33 @@
+﻿@model LqtLesson08Models.Models.LqtMember
+
+@{
+    ViewData["Title"] = "Thông tin chi tiết thành viên";
+}
+
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-white py-3">
+        <h3 class="mb-0 text-primary">@ViewData["Title"]</h3>
+    </div>
+    <div class="card-body">
+        <dl class="row mb-0 fs-6">
+            <dt class="col-sm-3 text-muted">@Html.DisplayNameFor(model => model.LqtMemberId)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LqtMemberId)</dd>
+
+            <dt class="col-sm-3 text-muted">@Html.DisplayNameFor(model => model.LqtUserName)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LqtUserName)</dd>
+
+            <dt class="col-sm-3 text-muted">@Html.DisplayNameFor(model => model.LqtPassword)</dt>
+            <dd class="col-sm-9">••••••••</dd>
+
+            <dt class="col-sm-3 text-muted">@Html.DisplayNameFor(model => model.LqtFullName)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LqtFullName)</dd>
+
+            <dt class="col-sm-3 text-muted">@Html.DisplayNameFor(model => model.LqtEmail)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.LqtEmail)</dd>
+        </dl>
+    </div>
+    <div class="card-footer bg-white border-top-0 pb-3">
+        <a asp-action="LqtEdit" asp-route-id="@Model.LqtMemberId" class="btn btn-warning">Sửa</a>
+        <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+    </div>
+</div>

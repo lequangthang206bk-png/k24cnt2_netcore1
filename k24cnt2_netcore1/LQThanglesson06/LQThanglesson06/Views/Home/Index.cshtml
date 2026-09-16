@@ -1,0 +1,52 @@
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<div class="home-page">
+    <section class="hero-card">
+        <div class="hero-content">
+            <span class="eyebrow">ASP.NET CORE MVC • LESSON 06</span>
+            <h1>Quản lý danh mục sản phẩm</h1>
+            <p>
+                Giao diện được thiết kế gọn gàng, dễ theo dõi và vẫn giữ nguyên
+                các chức năng chính của bài thực hành.
+            </p>
+            <a class="btn btn-hero" asp-controller="Home" asp-action="About">
+                Xem thông tin sinh viên <span>→</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="section-heading">
+        <div>
+            <span class="section-kicker">TỔNG QUAN</span>
+            <h2>Danh mục hiện có</h2>
+        </div>
+        <span class="section-note">Dữ liệu hiển thị từ CategoryViewComponent</span>
+    </section>
+
+    <div class="feature-grid">
+        <article class="feature-card">
+            <div class="feature-icon">💻</div>
+            <h3>Máy tính</h3>
+            <p>Thiết bị phục vụ học tập, làm việc và giải trí.</p>
+        </article>
+        <article class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>SmartPhone</h3>
+            <p>Danh mục thiết bị di động được trình bày trực quan.</p>
+        </article>
+        <article class="feature-card">
+            <div class="feature-icon">⌚</div>
+            <h3>Đồng hồ</h3>
+            <p>Danh mục phụ kiện thông minh, dễ mở rộng sau này.</p>
+        </article>
+    </div>
+    <div class="note-card">
+        <span class="note-icon">💡</span>
+        <div>
+            <strong>Sáng tạo nội dung </strong>
+            <p>Liên Hệ Chúng Tôi </p>
+        </div>
+    </div>
+</div>
