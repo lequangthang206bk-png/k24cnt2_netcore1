@@ -1,0 +1,54 @@
+@model Student
+@{
+    ViewData["Title"] = "Thông tin sinh viên";
+}
+
+<div class="page-title">
+    <div>
+        <span class="eyebrow">STUDENT INFORMATION</span>
+        <h1>Thông tin sinh viên</h1>
+        <p>Thông tin người thực hiện project LQThangLesson9.</p>
+    </div>
+</div>
+
+<div class="student-profile">
+    <div class="student-avatar">LQT</div>
+
+    <div class="student-main">
+        <span class="student-role">SINH VIÊN</span>
+        <h2>@Model.FullName</h2>
+        <p class="student-id">Mã sinh viên: <strong>@Model.StudentId</strong></p>
+    </div>
+
+    <div class="student-grid">
+        <div class="student-item">
+            <span>Họ và tên</span>
+            <strong>@Model.FullName</strong>
+        </div>
+        <div class="student-item">
+            <span>Mã sinh viên</span>
+            <strong>@Model.StudentId</strong>
+        </div>
+        <div class="student-item">
+            <span>Lớp</span>
+            <strong>@Model.ClassName</strong>
+        </div>
+        <div class="student-item">
+            <span>Chuyên ngành</span>
+            <strong>@Model.Major</strong>
+        </div>
+        <div class="student-item full">
+            <span>Email</span>
+            <strong>@Model.Email</strong>
+        </div>
+    </div>
+
+    <div class="student-note">
+        <strong>Đề tài:</strong> Xây dựng chức năng quản lý tài khoản bằng ASP.NET Core MVC.
+    </div>
+
+    <div class="form-actions">
+        <a class="btn light" asp-controller="Account" asp-action="Index">Về trang danh sách</a>
+        <a class="btn primary" asp-controller="Account" asp-action="Create">Tạo tài khoản</a>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+[
+  {
+    "Id": 1,
+    "FullName": "LE QUANG THANG",
+    "Email": "lethang@gmail.com",
+    "Phone": "0901234567",
+    "Address": "H\u00E0 N\u1ED9i",
+    "Avatar": null,
+    "BirthDate": "2006-02-12T00:00:00",
+    "Gender": "Nam",
+    "Password": null,
+    "FacebookUrl": "https://facebook.com/",
+    "CreatedAt": "2026-09-23T10:00:00"
+  },
+  {
+    "Id": 2,
+    "FullName": "L\u01B0\u1EDDng H\u01B0\u01A1ng Tr\u00E0",
+    "Email": "htra@gmail.com",
+    "Phone": "0912345678",
+    "Address": "Thanh H\u00F3a",
+    "Avatar": null,
+    "BirthDate": "2006-10-05T00:00:00",
+    "Gender": "N\u1EEF",
+    "Password": null,
+    "FacebookUrl": "https://facebook.com/",
+    "CreatedAt": "2026-09-23T10:00:00"
+  }
+]
