@@ -1,0 +1,27 @@
+@model Product
+<div class="mb-3">
+    <label asp-for="Name" class="form-label">Tên sản phẩm</label>
+    <input asp-for="Name" class="form-control" required />
+</div>
+<div class="mb-3">
+    <label asp-for="Category" class="form-label">Nhóm sản phẩm</label>
+    <input asp-for="Category" class="form-control" placeholder="Ví dụ: Lego" required />
+</div>
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label asp-for="Price" class="form-label">Giá</label>
+        <input asp-for="Price" class="form-control" type="number" min="0" required />
+    </div>
+    <div class="col-md-6 mb-3">
+        <label asp-for="Quantity" class="form-label">Số lượng</label>
+        <input asp-for="Quantity" class="form-control" type="number" min="0" required />
+    </div>
+</div>
+<div class="mb-3">
+    <label asp-for="ImageUrl" class="form-label">Link hình ảnh</label>
+    <input asp-for="ImageUrl" class="form-control" />
+</div>
+<div class="mb-3">
+    <label asp-for="Description" class="form-label">Mô tả</label>
+    <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+</div>

@@ -1,0 +1,11 @@
+@model Product
+@{
+    ViewData["Title"] = "Thêm sản phẩm";
+}
+<h2>Thêm sản phẩm</h2>
+<form asp-action="Create" method="post" class="form-card">
+    @Html.AntiForgeryToken()
+    <partial name="_ProductForm" model="Model" />
+    <button class="btn btn-dark">Lưu sản phẩm</button>
+    <a class="btn btn-outline-secondary" asp-action="Index">Hủy</a>
+</form>

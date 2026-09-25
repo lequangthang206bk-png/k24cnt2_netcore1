@@ -1,0 +1,72 @@
+@model CheckoutViewModel
+@{
+    ViewData["Title"] = "Thanh toán";
+    var total = (decimal)(ViewBag.Total ?? 0m);
+}
+
+<div class="checkout-page">
+    <div class="page-heading">
+        <span class="section-kicker">BƯỚC CUỐI</span>
+        <h1>Thanh toán đơn hàng</h1>
+        <p>Nhập thông tin nhận hàng và chọn phương thức thanh toán.</p>
+    </div>
+
+    <form asp-action="Checkout" method="post">
+        @Html.AntiForgeryToken()
+        <div class="row g-4">
+            <div class="col-lg-7">
+                <div class="checkout-card">
+                    <h2>Thông tin nhận hàng</h2>
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label asp-for="FullName"></label>
+                            <input asp-for="FullName" class="form-control" placeholder="Nguyễn Văn A" />
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Phone"></label>
+                            <input asp-for="Phone" class="form-control" placeholder="09xxxxxxxx" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+                        <div class="col-12">
+                            <label asp-for="Address"></label>
+                            <input asp-for="Address" class="form-control" placeholder="Số nhà, đường, phường/xã, quận/huyện..." />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <div class="col-12">
+                            <label asp-for="Note"></label>
+                            <textarea asp-for="Note" class="form-control" rows="3" placeholder="Ghi chú cho đơn hàng (không bắt buộc)"></textarea>
+                        </div>
+                    </div>
+
+                    <h2 class="mt-4">Phương thức thanh toán</h2>
+                    <div class="payment-options">
+                        <label class="payment-option">
+                            <input asp-for="PaymentMethod" type="radio" value="COD" checked />
+                            <span class="payment-icon">💵</span>
+                            <span><strong>Thanh toán khi nhận hàng</strong><small>Thanh toán trực tiếp cho shipper.</small></span>
+                        </label>
+                        <label class="payment-option">
+                            <input asp-for="PaymentMethod" type="radio" value="BANK" />
+                            <span class="payment-icon">🏦</span>
+                            <span><strong>Chuyển khoản ngân hàng</strong><small>Thanh toán sau khi xác nhận đơn hàng.</small></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="checkout-summary sticky-lg-top" style="top:20px">
+                    <h2>Đơn hàng của bạn</h2>
+                    <div class="summary-line"><span>Tạm tính</span><strong>@total.ToString("N0") đ</strong></div>
+                    <div class="summary-line"><span>Vận chuyển</span><strong class="text-success">Miễn phí</strong></div>
+                    <hr />
+                    <div class="summary-total"><span>Tổng thanh toán</span><strong>@total.ToString("N0") đ</strong></div>
+                    <button class="checkout-button border-0 w-100" type="submit">Xác nhận đặt hàng →</button>
+                    <a asp-action="Index" class="back-cart">← Quay lại giỏ hàng</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+

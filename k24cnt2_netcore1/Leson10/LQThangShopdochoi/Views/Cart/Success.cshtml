@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Đặt hàng thành công";
+}
+
+<div class="success-page">
+    <div class="success-icon">✓</div>
+    <span class="section-kicker">ĐẶT HÀNG THÀNH CÔNG</span>
+    <h1>Cảm ơn bạn đã mua hàng!</h1>
+    <p>Xin chào <strong>@ViewBag.CustomerName</strong>, ShopDoChoi đã tiếp nhận đơn hàng của bạn.</p>
+    <div class="success-info">
+        <div><span>Mã đơn hàng</span><strong>@ViewBag.OrderCode</strong></div>
+        <div><span>Tổng thanh toán</span><strong>@(((decimal)ViewBag.Total).ToString("N0")) đ</strong></div>
+        <div><span>Thanh toán</span><strong>@ViewBag.PaymentMethod</strong></div>
+    </div>
+    <a asp-controller="Home" asp-action="Index" class="checkout-button d-inline-block">Tiếp tục mua sắm →</a>
+</div>

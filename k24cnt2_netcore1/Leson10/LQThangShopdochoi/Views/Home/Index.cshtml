@@ -1,0 +1,143 @@
+@model List<Product>
+@{
+    ViewData["Title"] = "Trang chủ";
+    var categories = ViewBag.Categories as List<string> ?? new List<string>();
+    var currentCategory = ViewBag.Category as string ?? "Tất cả";
+    var keyword = ViewBag.Keyword as string ?? "";
+}
+
+<section class="home-hero mb-4">
+    <div class="hero-content">
+        <span class="eyebrow">SHOP ĐỒ CHƠI · 2026</span>
+        <h1>Khám phá thế giới<br /><span>đồ chơi đầy màu sắc</span></h1>
+        <p>Mô hình, xe điều khiển, thú bông, LEGO và nhiều món đồ chơi thú vị cho mọi lứa tuổi.</p>
+        <a class="hero-button" href="#product-list">Khám phá ngay →</a>
+    </div>
+    <div class="hero-toy">🧸</div>
+</section>
+
+<section class="home-catalog" id="product-list">
+    <div class="catalog-toolbar">
+        <div class="category-menu-wrap">
+            <button type="button" class="category-toggle" id="categoryToggle" aria-expanded="false" aria-controls="categoryMenu">
+                <span class="category-toggle-icon">☰</span>
+                <span>DANH MỤC</span>
+                <span class="category-toggle-arrow">⌄</span>
+            </button>
+
+            <div class="category-menu" id="categoryMenu">
+                <a class="category-item @(currentCategory == "Tất cả" ? "active" : "")"
+                   asp-action="Index" asp-route-keyword="@keyword">
+                    <span class="category-icon">✨</span>
+                    <span>Tất cả sản phẩm</span>
+                    <b>›</b>
+                </a>
+                @foreach (var category in categories)
+                {
+                    var icon = category switch
+                    {
+                        "Ô Tô" => "🚗",
+                        "Mô Tô" => "🏍️",
+                        "Blind Box" => "🎁",
+                        "Máy Bay" => "✈️",
+                        "Xe Chuyên Dụng" => "🚜",
+                        "Xe Đạp" => "🚲",
+                        "Figure" => "🤖",
+                        "Lắp Ráp 3D" => "🧩",
+                        "Gấu Bông" => "🧸",
+                        "Đồ Chơi Sáng Tạo" => "🎨",
+                        "Thế Giới Động Vật" => "🦁",
+                        "Phụ Kiện" => "🎒",
+                        "Thẻ Sưu Tập" => "🃏",
+                        "Xe Điều Khiển" => "🎮",
+                        _ => "🧸"
+                    };
+                    <a class="category-item @(currentCategory == category ? "active" : "")"
+                       asp-action="Index" asp-route-category="@category" asp-route-keyword="@keyword">
+                        <span class="category-icon">@icon</span>
+                        <span>@category</span>
+                        <b>›</b>
+                    </a>
+                }
+            </div>
+        </div>
+
+        <div class="catalog-current">
+            <span class="section-kicker">DANH MỤC SẢN PHẨM</span>
+            <h2>@(currentCategory == "Tất cả" ? "Sản phẩm nổi bật" : currentCategory)</h2>
+            @if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                <p>Kết quả cho: <strong>@keyword</strong></p>
+            }
+        </div>
+
+        <a asp-controller="Product" asp-action="Index" class="view-all">Quản lý sản phẩm →</a>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="empty-state">
+            <div>🔎</div>
+            <h4>Không tìm thấy sản phẩm</h4>
+            <p>Thử chọn danh mục khác hoặc tìm kiếm với từ khóa khác.</p>
+        </div>
+    }
+    else
+    {
+        <div class="home-product-grid">
+            @foreach (var p in Model)
+            {
+                <article class="product-card-new">
+                    <a asp-action="Details" asp-route-id="@p.Id" class="product-image-wrap">
+                        <img src="@p.ImageUrl" alt="@p.Name" class="product-img" />
+                        @if (p.Quantity > 0)
+                        {
+                            <span class="new-badge">CÒN HÀNG</span>
+                        }
+                        else
+                        {
+                            <span class="out-badge">HẾT HÀNG</span>
+                        }
+                    </a>
+                    <div class="product-card-body">
+                        <span class="product-category">@p.Category</span>
+                        <h3><a asp-action="Details" asp-route-id="@p.Id">@p.Name</a></h3>
+                        <div class="product-bottom">
+                            <strong class="price">@p.Price.ToString("N0") đ</strong>
+                            <form asp-controller="Cart" asp-action="Add" method="post">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="id" value="@p.Id" />
+                                <button class="add-cart" type="submit" @(p.Quantity <= 0 ? "disabled" : "") aria-label="Thêm vào giỏ">🛒</button>
+                            </form>
+                        </div>
+                    </div>
+                </article>
+            }
+        </div>
+    }
+</section>
+
+@section Scripts {
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggle = document.getElementById('categoryToggle');
+        const menu = document.getElementById('categoryMenu');
+        if (!toggle || !menu) return;
+
+        toggle.addEventListener('click', function (event) {
+            event.stopPropagation();
+            const open = menu.classList.toggle('show');
+            toggle.classList.toggle('open', open);
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+
+        document.addEventListener('click', function (event) {
+            if (!event.target.closest('.category-menu-wrap')) {
+                menu.classList.remove('show');
+                toggle.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+</script>
+}
