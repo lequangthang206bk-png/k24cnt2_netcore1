@@ -1,0 +1,26 @@
+@model LQthangLesson10._1.Models.LqtMember
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+    <h4>LqtMember</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Id</dt>
+        <dd class="col-sm-10">@Model.Id</dd>
+
+        <dt class="col-sm-2">User Name</dt>
+        <dd class="col-sm-10">@Model.LqtUserName</dd>
+
+        <dt class="col-sm-2">Full Name</dt>
+        <dd class="col-sm-10">@Model.LqtFullName</dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>

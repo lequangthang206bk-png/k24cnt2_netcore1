@@ -1,0 +1,32 @@
+USE LQTK24CNT2_LESSON10;
+GO
+
+IF OBJECT_ID('dbo.LqtMember', 'U') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.LqtMember;
+END
+GO
+
+CREATE TABLE dbo.LqtMember
+(
+    id BIGINT IDENTITY(1,1) NOT NULL,
+    LqtUserName VARCHAR(20) NULL,
+    LqtPassword VARCHAR(50) NULL,
+    LqtFullName NVARCHAR(50) NULL,
+    LqtEmail VARCHAR(50) NULL,
+    LqtPhone CHAR(12) NULL,
+    LqtStatus BIT NULL,
+
+    CONSTRAINT PK_LqtMember PRIMARY KEY (id)
+);
+GO
+
+SELECT
+    COLUMN_NAME AS ColumnName,
+    DATA_TYPE AS DataType,
+    IS_NULLABLE AS IsNullable
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_SCHEMA = 'dbo'
+  AND TABLE_NAME = 'LqtMember'
+ORDER BY ORDINAL_POSITION;
+GO

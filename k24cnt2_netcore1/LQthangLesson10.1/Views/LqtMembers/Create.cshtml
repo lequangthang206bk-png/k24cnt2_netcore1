@@ -1,0 +1,45 @@
+@model LQthangLesson10._1.Models.LqtMember
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label asp-for="LqtUserName" class="control-label"></label>
+        <input asp-for="LqtUserName" class="form-control" />
+        <span asp-validation-for="LqtUserName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LqtPassword" class="control-label"></label>
+        <input asp-for="LqtPassword" class="form-control" />
+        <span asp-validation-for="LqtPassword" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LqtFullName" class="control-label"></label>
+        <input asp-for="LqtFullName" class="form-control" />
+        <span asp-validation-for="LqtFullName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LqtEmail" class="control-label"></label>
+        <input asp-for="LqtEmail" class="form-control" />
+        <span asp-validation-for="LqtEmail" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LqtPhone" class="control-label"></label>
+        <input asp-for="LqtPhone" class="form-control" />
+        <span asp-validation-for="LqtPhone" class="text-danger"></span>
+    </div>
+    <div class="form-group form-check">
+        <input asp-for="LqtStatus" class="form-check-input" />
+        <label asp-for="LqtStatus" class="form-check-label"></label>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>
+
+<partial name="_ValidationScriptsPartial" />
