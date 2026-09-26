@@ -1,0 +1,51 @@
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<section class="home-hero">
+    <div class="hero-content">
+        <span class="hero-badge">ASP.NET CORE MVC • SQL SERVER</span>
+        <h1>Hệ thống quản lý sinh viên</h1>
+        <p>LeQuangThang2410900071_exam</p>
+        <div class="hero-actions">
+            <a asp-controller="LqtEmployee" asp-action="Index" class="btn btn-primary btn-lg">Danh sách sinh viên</a>
+            <a asp-controller="Home" asp-action="LqtAbout" class="btn btn-light btn-lg">Thông tin sinh viên</a>
+        </div>
+    </div>
+    <div class="hero-icon">🎓</div>
+</section>
+
+<section class="row g-4 mt-1">
+    <div class="col-md-4">
+        <div class="feature-card h-100">
+            <div class="feature-icon">👨‍🎓</div>
+            <h3>Quản lý sinh viên</h3>
+            <a asp-controller="LqtEmployee" asp-action="Index" class="stretched-link">Mở danh sách →</a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="feature-card h-100">
+            <div class="feature-icon">🗄️</div>
+            <h3>Kết nối Nhanh Chóng</h3>
+            <p></p>
+            <span class="feature-label">Xử Lý Nhanh Chóng</span>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="feature-card h-100">
+            <div class="feature-icon">⚡</div>
+            <h3>Tiện Lợi</h3>
+            <p></p>
+            <span class="feature-label">tiện lợi khi sử dụng</span>
+        </div>
+    </div>
+</section>
+
+<section class="exam-panel mt-4">
+    <div>
+        <span class="section-label">Thông Tin Sinh Viên</span>
+        
+        <p class="mb-0">Mã sinh viên: <strong>2410900071</strong> · Sinh viên: <strong>Lê Quang Thắng</strong></p>
+    </div>
+    <a asp-controller="LqtEmployee" asp-action="Create" class="btn btn-outline-primary">+ Thêm sinh viên</a>
+</section>

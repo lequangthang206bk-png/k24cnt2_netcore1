@@ -1,0 +1,22 @@
+@model LqtEmployee
+@{
+    ViewData["Title"] = "Chi tiết sinh viên";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-info text-white"><h3 class="mb-0">Chi tiết sinh viên</h3></div>
+    <div class="card-body">
+        <dl class="row mb-0">
+            <dt class="col-sm-3">Họ và tên</dt><dd class="col-sm-9">@Model.LqtName</dd>
+            <dt class="col-sm-3">Giới tính</dt><dd class="col-sm-9">@Model.LqtGender</dd>
+            <dt class="col-sm-3">Ngày sinh</dt><dd class="col-sm-9">@Model.LqtBirthDay?.ToString("dd/MM/yyyy")</dd>
+            <dt class="col-sm-3">Email</dt><dd class="col-sm-9">@Model.LqtEmail</dd>
+            <dt class="col-sm-3">Số điện thoại</dt><dd class="col-sm-9">@Model.LqtPhone</dd>
+            <dt class="col-sm-3">Trạng thái</dt><dd class="col-sm-9">@(Model.LqtActive ? "Hoạt động" : "Không hoạt động")</dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Sửa</a>
+        <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+    </div>
+</div>

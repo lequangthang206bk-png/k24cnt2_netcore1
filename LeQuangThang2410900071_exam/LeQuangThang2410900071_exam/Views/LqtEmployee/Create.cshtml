@@ -1,0 +1,17 @@
+@model LqtEmployee
+@{
+    ViewData["Title"] = "Thêm sinh viên";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white"><h3 class="mb-0">Thêm sinh viên</h3></div>
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <partial name="_StudentForm" model="Model" />
+            <button type="submit" class="btn btn-primary">Lưu</button>
+            <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+        </form>
+    </div>
+</div>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

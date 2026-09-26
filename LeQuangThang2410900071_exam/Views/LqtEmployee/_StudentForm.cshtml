@@ -1,0 +1,39 @@
+@model LqtEmployee
+<div class="row g-3">
+    <div class="col-md-6">
+        <label asp-for="LqtName" class="form-label"></label>
+        <input asp-for="LqtName" class="form-control" />
+        <span asp-validation-for="LqtName" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="LqtGender" class="form-label"></label>
+        <select asp-for="LqtGender" class="form-select">
+            <option value="">-- Chọn giới tính --</option>
+            <option value="Nam">Nam</option>
+            <option value="Nữ">Nữ</option>
+            <option value="Khác">Khác</option>
+        </select>
+        <span asp-validation-for="LqtGender" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="LqtBirthDay" class="form-label"></label>
+        <input asp-for="LqtBirthDay" class="form-control" />
+        <span asp-validation-for="LqtBirthDay" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="LqtEmail" class="form-label"></label>
+        <input asp-for="LqtEmail" class="form-control" />
+        <span asp-validation-for="LqtEmail" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="LqtPhone" class="form-label"></label>
+        <input asp-for="LqtPhone" class="form-control" />
+        <span asp-validation-for="LqtPhone" class="text-danger"></span>
+    </div>
+    <div class="col-md-6 d-flex align-items-end">
+        <div class="form-check mb-2">
+            <input asp-for="LqtActive" class="form-check-input" />
+            <label asp-for="LqtActive" class="form-check-label"></label>
+        </div>
+    </div>
+</div>
