@@ -1,0 +1,80 @@
+@model IEnumerable<LQThangLesson12.Models.Product>
+
+@{
+    ViewData["Title"] = "Sản phẩm";
+}
+
+<h1>Danh sách sản phẩm</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">
+        Thêm sản phẩm
+    </a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>SalePrice</th>
+            <th>Status</th>
+            <th>Descriptions</th>
+            <th>CategoryId</th>
+            <th>CreatedDate</th>
+            <th>Category</th>
+            <th>Chức năng</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+
+                <td>@item.Name</td>
+
+                <td>
+                    @if (!string.IsNullOrEmpty(item.Image))
+                    {
+                        <img src="@item.Image"
+                             width="80"
+                             height="80"
+                             style="object-fit:cover;" />
+                    }
+                </td>
+
+                <td>@item.Price</td>
+
+                <td>@item.SalePrice</td>
+
+                <td>@item.Status</td>
+
+                <td>@item.Descriptions</td>
+
+                <td>@item.CategoryId</td>
+
+                <td>@item.CreatedDate</td>
+
+                <td>@item.Category?.Name</td>
+
+                <td>
+                    <a asp-action="Edit"
+                       asp-route-id="@item.Id"
+                       class="btn btn-warning btn-sm">
+                        Sửa
+                    </a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@item.Id"
+                       class="btn btn-danger btn-sm">
+                        Xóa
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
