@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/LQTLayoutHome.css" />
+</head>
+<body>
+
+    <header class="home-header container">
+        <img src="~/images/trangchu.jpg" alt="LQT Store" />
+
+        <div class="home-overlay">
+            <div class="store-title">
+                <span>LQT STORE</span>
+                <h1>THẾ GIỚI SẢN PHẨM</h1>
+                <p>Khám phá những sản phẩm nổi bật của Lê Quang Thắng</p>
+            </div>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a asp-controller="Products" asp-action="Index">Danh sách sản phẩm</a>
+                    </li>
+                    <li>
+                        <a asp-controller="Products" asp-action="Search">Tìm kiếm sản phẩm</a>
+                    </li>
+                    <li>
+                        <a asp-controller="Products" asp-action="Hots">Sản phẩm bán chạy</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="main container">
+        @RenderBody()
+    </section>
+
+    <footer>
+        <p>&copy; 2026 - @@Copyright By @@Lê Quang Thắng</p>
+    </footer>
+
+    <script src="/js/LQTLayoutHome.js"></script>
+</body>
+</html>
