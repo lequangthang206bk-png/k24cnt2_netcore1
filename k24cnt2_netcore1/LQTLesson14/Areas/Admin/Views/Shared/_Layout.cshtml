@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LQT Admin</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/admin-layout.css" asp-append-version="true" />
+</head>
+<body class="admin-body">
+    <aside class="admin-sidebar">
+        <div class="brand">
+            <div class="brand-mark">LQ</div>
+            <div><strong>LQT Admin</strong><small>Lesson 14</small></div>
+        </div>
+        <div class="admin-user">
+            <div class="avatar">LT</div>
+            <div><strong>Lê Quang Thắng</strong><span>Administrator</span></div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-label">QUẢN TRỊ</div>
+            <a class="nav-link-item" asp-area="Admin" asp-controller="Dashboard" asp-action="Index"><span>▣</span> Dashboard</a>
+            <a class="nav-link-item" asp-area="Admin" asp-controller="Products" asp-action="Index"><span>▦</span> Sản phẩm</a>
+            <a class="nav-link-item" asp-area="Admin" asp-controller="Categories" asp-action="Index"><span>▤</span> Danh mục</a>
+            <div class="nav-label">HỆ THỐNG</div>
+            <a class="nav-link-item" asp-area="" asp-controller="Home" asp-action="Index"><span>⌂</span> Về cửa hàng</a>
+        </nav>
+    </aside>
+
+    <div class="admin-main">
+        <header class="admin-topbar">
+            <div class="topbar-left">
+                <button class="sidebar-toggle" type="button" onclick="document.body.classList.toggle('sidebar-collapsed')">☰</button>
+                <span>Trang quản trị</span>
+            </div>
+            <div class="topbar-right">
+                <span>🔔</span>
+                <span>✉</span>
+                <a asp-area="" asp-controller="Home" asp-action="Index">Xem cửa hàng</a>
+            </div>
+        </header>
+
+        <main class="admin-content">
+            <div class="breadcrumb-row">
+                <div>
+                    <h1>@ViewData["Title"]</h1>
+                    <p>Quản lý và theo dõi hoạt động của LQT Store</p>
+                </div>
+                <div class="breadcrumb">Home / @ViewData["Title"]</div>
+            </div>
+            @RenderBody()
+        </main>
+
+        <footer class="admin-footer">Copyright © 2026 LQT Store</footer>
+    </div>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/admin-layout.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

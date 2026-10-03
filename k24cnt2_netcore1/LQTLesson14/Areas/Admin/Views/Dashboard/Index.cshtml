@@ -1,0 +1,65 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<section class="stat-grid">
+    <div class="stat-card stat-blue"><div><strong>150</strong><span>Đơn hàng mới</span></div><b>🛍</b><a href="#">Xem thêm →</a></div>
+    <div class="stat-card stat-green"><div><strong>53%</strong><span>Tỷ lệ truy cập</span></div><b>▥</b><a href="#">Xem thêm →</a></div>
+    <div class="stat-card stat-yellow"><div><strong>44</strong><span>Người dùng mới</span></div><b>♙</b><a href="#">Xem thêm →</a></div>
+    <div class="stat-card stat-red"><div><strong>65</strong><span>Lượt truy cập</span></div><b>◔</b><a href="#">Xem thêm →</a></div>
+</section>
+
+<section class="dashboard-grid">
+    <div class="panel panel-sales">
+        <div class="panel-header"><h2>Doanh số</h2><div class="panel-tabs"><span class="active">Area</span><span>Donut</span></div></div>
+        <div class="area-chart">
+            <div class="grid-line l1"></div><div class="grid-line l2"></div><div class="grid-line l3"></div><div class="grid-line l4"></div>
+            <svg viewBox="0 0 760 280" preserveAspectRatio="none" aria-label="Biểu đồ doanh số">
+                <path class="area-one" d="M0,210 C80,170 120,155 190,190 C255,220 290,260 350,180 C405,105 440,145 480,95 C525,40 550,200 600,185 C660,170 700,95 760,45 L760,280 L0,280 Z" />
+                <path class="area-two" d="M0,145 C75,165 130,175 190,125 C250,75 305,100 350,60 C420,5 475,70 520,125 C580,195 640,110 700,130 C725,138 745,145 760,150 L760,280 L0,280 Z" />
+            </svg>
+            <div class="chart-labels"><span>Th1</span><span>Th2</span><span>Th3</span><span>Th4</span><span>Th5</span><span>Th6</span><span>Th7</span></div>
+        </div>
+    </div>
+
+    <div class="panel visitor-panel">
+        <div class="panel-header"><h2>Khách truy cập</h2><span>⌁</span></div>
+        <div class="map-placeholder"><div class="map-shape">▱</div><span>VIỆT NAM</span></div>
+        <div class="visitor-stats"><div><strong>1,240</strong><small>Visitors</small></div><div><strong>842</strong><small>Online</small></div><div><strong>64%</strong><small>Sales</small></div></div>
+    </div>
+
+    <div class="panel chat-panel">
+        <div class="panel-header"><h2>Trực tiếp</h2><span>×</span></div>
+        <div class="chat-list">
+            <div class="chat-row"><div class="avatar small">LT</div><div><strong>Khách hàng</strong><p>Sản phẩm có sẵn không?</p></div><time>10:25</time></div>
+            <div class="chat-row reply"><div class="avatar small">LQ</div><div><strong>LQT Store</strong><p>Sản phẩm đang có sẵn tại cửa hàng.</p></div><time>10:27</time></div>
+            <div class="chat-row"><div class="avatar small">AN</div><div><strong>Khách hàng</strong><p>Tôi muốn xem thêm sản phẩm.</p></div><time>10:31</time></div>
+        </div>
+        <div class="chat-input"><input placeholder="Nhập tin nhắn..." /><button>Gửi</button></div>
+    </div>
+
+    <div class="side-stack">
+        <div class="panel sales-graph">
+            <div class="panel-header"><h2>Biểu đồ bán hàng</h2><span>− ×</span></div>
+            <div class="line-chart">
+                <svg viewBox="0 0 480 180" preserveAspectRatio="none"><polyline points="0,150 55,142 105,115 160,128 215,82 270,100 325,112 380,28 430,70 480,88" fill="none" stroke="currentColor" stroke-width="4" /></svg>
+                <div class="line-labels"><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span></div>
+            </div>
+            <div class="donut-row"><div><i></i><span>Đơn hàng</span></div><div><i></i><span>Online</span></div><div><i></i><span>Tại cửa hàng</span></div></div>
+        </div>
+        <div class="panel calendar-panel">
+            <div class="panel-header"><h2>Lịch</h2><span>☰ − ×</span></div>
+            <div class="calendar-title"><b>Tháng 10 2026</b><span>‹ &nbsp; ›</span></div>
+            <div class="calendar-grid"><span>CN</span><span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span></span><span></span><span></span><span></span><span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span class="today">14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span></div>
+        </div>
+    </div>
+</section>
+
+<section class="panel todo-panel">
+    <div class="panel-header"><h2>Công việc cần làm</h2><span>1 &nbsp; 2 &nbsp; 3</span></div>
+    <div class="todo-row"><span>☷</span><input type="checkbox" /><strong>Thiết kế giao diện mới</strong><em>2 phút</em></div>
+    <div class="todo-row"><span>☷</span><input type="checkbox" checked /><strong>Hoàn thiện Layout</strong><em>4 giờ</em></div>
+    <div class="todo-row"><span>☷</span><input type="checkbox" /><strong>Kiểm tra danh mục</strong><em>1 ngày</em></div>
+    <div class="todo-row"><span>☷</span><input type="checkbox" /><strong>Cập nhật sản phẩm</strong><em>3 ngày</em></div>
+    <div class="todo-add"><button>+ Thêm công việc</button></div>
+</section>

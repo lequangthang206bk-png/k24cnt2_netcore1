@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Tìm kiếm sản phẩm";
+    Layout = "~/Views/Shared/_LQTLayoutHome.cshtml";
+}
+
+<div class="page-title">
+    <h1>@ViewData["Title"]</h1>
+    <p>Tìm kiếm sản phẩm bạn đang quan tâm</p>
+</div>
+
+<div class="search-box">
+
+    <form asp-controller="Products" asp-action="Search" method="get">
+
+        <div class="search-input">
+            <input type="text"
+                   name="keyword"
+                   placeholder="Nhập tên sản phẩm cần tìm..." />
+
+            <button type="submit">
+                🔍 Tìm kiếm
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
+@if (ViewData["ProductId"] != null)
+{
+    <div class="search-result">
+        <h3>Kết quả tìm kiếm</h3>
+
+        <p>
+            Từ khóa:
+            <strong>@ViewData["ProductId"]</strong>
+        </p>
+    </div>
+}
+else
+{
+    <div class="search-empty">
+        <div class="search-icon">🔎</div>
+        <h3>Chưa có từ khóa tìm kiếm</h3>
+        <p>Nhập từ khóa vào ô phía trên để tìm kiếm sản phẩm.</p>
+    </div>
+}
