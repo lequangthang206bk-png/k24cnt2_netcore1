@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "HttpContext.Items";
+}
+
+<section class="page-heading">
+    <span class="eyebrow">SERVER-SIDE STATE</span>
+    <h1>HttpContext.Items</h1>
+    <p>Dữ liệu chỉ tồn tại trong phạm vi request hiện tại và phù hợp để chia sẻ dữ liệu giữa các thành phần xử lý request.</p>
+</section>
+
+<div class="result-panel large">
+    <span>Giá trị trong request hiện tại</span>
+    <strong>@ViewBag.ItemMessage</strong>
+    <a class="btn-main" asp-action="Items">Tạo request mới</a>
+</div>

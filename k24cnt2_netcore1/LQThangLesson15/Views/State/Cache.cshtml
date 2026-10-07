@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Cache";
+}
+
+<section class="page-heading">
+    <span class="eyebrow">SERVER-SIDE STATE</span>
+    <h1>Cache</h1>
+    <p>IMemoryCache lưu dữ liệu trong bộ nhớ theo thời gian sống được cấu hình.</p>
+</section>
+
+<div class="result-panel large">
+    <span>Giá trị Cache</span>
+    <strong>@ViewBag.CacheMessage</strong>
+    <a class="btn-main" asp-action="Cache">Đọc Cache</a>
+</div>

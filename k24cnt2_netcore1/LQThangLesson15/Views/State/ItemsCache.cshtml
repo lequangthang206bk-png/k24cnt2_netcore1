@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "HttpContext.Items và Cache";
+}
+
+<section class="page-heading">
+    <span class="eyebrow">SERVER-SIDE STATE</span>
+    <h1>HttpContext.Items và Cache</h1>
+    <p>Items chỉ tồn tại trong request hiện tại; Cache được dùng lại trong thời gian cấu hình.</p>
+</section>
+
+<div class="comparison-grid">
+    <div class="comparison-card">
+        <span class="card-label">REQUEST SCOPE</span>
+        <h2>HttpContext.Items</h2>
+        <p>@ViewBag.ItemMessage</p>
+    </div>
+    <div class="comparison-card">
+        <span class="card-label">MEMORY CACHE</span>
+        <h2>IMemoryCache</h2>
+        <p>@ViewBag.CacheMessage</p>
+    </div>
+</div>

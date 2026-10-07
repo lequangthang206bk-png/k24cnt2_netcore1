@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="LQT Lesson 15 - ASP.NET Core State Management" />
+    <title>@ViewData["Title"] - LQT Lesson 15</title>
+    <link rel="stylesheet" href="~/css/LQTLayoutHome.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" asp-controller="Home" asp-action="Index">
+                <span class="brand-mark">LQT</span>
+                <span><strong>LQT Lesson 15</strong><small>State Management</small></span>
+            </a>
+            <nav class="main-nav">
+                <a asp-controller="Home" asp-action="Index">Trang chủ</a>
+                <a asp-controller="State" asp-action="Index">State Management</a>
+                <a asp-controller="Products" asp-action="Index">Sản phẩm</a>
+                <a asp-controller="Products" asp-action="Search">Tìm kiếm</a>
+                <a asp-controller="Products" asp-action="Hots">Nổi bật</a>
+                <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Quản trị</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-container">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert-state">@TempData["Message"]</div>
+        }
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <strong>LQT Lesson 15</strong>
+            <span>ASP.NET Core · SQL Server · State Management</span>
+        </div>
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,18 @@
+@model IEnumerable<LQThangLesson15.Models.LqtProduct>
+@{
+    ViewData["Title"] = "Quản lý sản phẩm";
+}
+<section class="panel">
+    <div class="panel-head"><h2>Sản phẩm từ SQL Server</h2><span>@Model.Count() sản phẩm</span></div>
+    <div class="table-responsive">
+        <table class="admin-table">
+            <thead><tr><th>ID</th><th>Tên</th><th>Danh mục</th><th>Giá</th></tr></thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr><td>@item.Id</td><td>@item.Name</td><td>@item.Category</td><td>@item.Price.ToString("N0") đ</td></tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</section>

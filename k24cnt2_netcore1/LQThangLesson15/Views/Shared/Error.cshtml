@@ -1,0 +1,13 @@
+@model LQThangLesson15.Models.ErrorViewModel
+@{
+    ViewData["Title"] = "Lỗi";
+}
+<section class="page-heading">
+    <span class="eyebrow">ERROR</span>
+    <h1>Đã xảy ra lỗi</h1>
+    <p>Không thể hoàn thành yêu cầu hiện tại.</p>
+    @if (Model.ShowRequestId)
+    {
+        <p>Mã yêu cầu: <strong>@Model.RequestId</strong></p>
+    }
+</section>

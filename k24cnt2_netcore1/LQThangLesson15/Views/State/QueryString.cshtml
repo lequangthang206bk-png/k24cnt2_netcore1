@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "QueryString";
+}
+
+<section class="page-heading">
+    <span class="eyebrow">CLIENT-SIDE STATE</span>
+    <h1>QueryString</h1>
+    <p>Dữ liệu được truyền qua URL và có thể đọc bằng tham số action.</p>
+</section>
+
+<div class="form-panel">
+    <form asp-action="QueryString" method="get">
+        <label for="keyword">Từ khóa</label>
+        <input id="keyword" name="keyword" value="@ViewBag.Keyword" placeholder="Nhập dữ liệu" />
+        <button class="btn-main" type="submit">Gửi QueryString</button>
+    </form>
+    <div class="result-panel">
+        <span>Giá trị nhận được</span>
+        <strong>@(ViewBag.Keyword ?? "Chưa có dữ liệu")</strong>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+@model IEnumerable<LQThangLesson15.Models.LqtProduct>
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+}
+
+<section class="page-heading">
+    <span class="eyebrow">SQL SERVER</span>
+    <h1>Danh sách sản phẩm</h1>
+    <p>Dữ liệu được đọc từ bảng LqtProduct trong SQL Server.</p>
+</section>
+
+<div class="product-grid">
+@foreach (var product in Model)
+{
+    <article class="product-card">
+        <div class="product-image"><img src="@product.ImageUrl" alt="@product.Name" /></div>
+        <div class="product-content">
+            <span class="category">@product.Category</span>
+            <h3>@product.Name</h3>
+            <p>@product.Description</p>
+            <div class="product-footer"><strong>@product.Price.ToString("N0") đ</strong><span>SQL Server</span></div>
+        </div>
+    </article>
+}
+</div>

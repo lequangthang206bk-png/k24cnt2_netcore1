@@ -1,0 +1,52 @@
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<section class="hero">
+    <div class="hero-content">
+        <span class="eyebrow">ASP.NET CORE · LESSON 15</span>
+        <h1>Quản lý trạng thái trong ứng dụng web</h1>
+        <p>Thực hành các cơ chế lưu trạng thái phía client và server bằng một ứng dụng ASP.NET Core kết nối SQL Server.</p>
+        <div class="hero-actions">
+            <a class="btn-main" asp-controller="State" asp-action="Index">Bắt đầu thực hành</a>
+            <a class="btn-outline" asp-controller="Products" asp-action="Index">Xem sản phẩm</a>
+        </div>
+    </div>
+    <div class="hero-visual">
+        <div class="state-orbit">
+            <b>STATE</b>
+            <span>Cookies</span>
+            <span>Session</span>
+            <span>TempData</span>
+            <span>QueryString</span>
+            <span>Hidden Fields</span>
+            <span>Items</span>
+            <span>Cache</span>
+        </div>
+    </div>
+</section>
+
+<section class="section-heading">
+    <span class="eyebrow">MỤC TIÊU</span>
+    <h2>7 kỹ thuật quản lý trạng thái</h2>
+    <p>Đúng theo nội dung bài học, mỗi kỹ thuật có trang thực hành riêng.</p>
+</section>
+
+<section class="state-grid">
+    <a class="state-card" asp-controller="State" asp-action="Cookie"><span>01 · CLIENT</span><h3>Cookies</h3><p>Lưu dữ liệu tại trình duyệt và gửi lại theo request.</p></a>
+    <a class="state-card" asp-controller="State" asp-action="Index"><span>02 · SERVER</span><h3>Session</h3><p>Lưu dữ liệu theo phiên làm việc ở phía server.</p></a>
+    <a class="state-card" asp-controller="State" asp-action="TempDataValue"><span>03 · SERVER</span><h3>TempData</h3><p>Truyền dữ liệu ngắn hạn giữa các request.</p></a>
+    <a class="state-card" asp-controller="State" asp-action="QueryString"><span>04 · CLIENT</span><h3>QueryString</h3><p>Truyền dữ liệu thông qua tham số trên URL.</p></a>
+    <a class="state-card" asp-controller="State" asp-action="HiddenField"><span>05 · FORM</span><h3>Hidden Fields</h3><p>Gửi dữ liệu ẩn cùng form mà không hiển thị trên giao diện.</p></a>
+    <a class="state-card" asp-controller="State" asp-action="Items"><span>06 · REQUEST</span><h3>HttpContext.Items</h3><p>Lưu dữ liệu chỉ trong phạm vi request hiện tại.</p></a>
+    <a class="state-card" asp-controller="State" asp-action="Cache"><span>07 · SERVER</span><h3>Cache</h3><p>Tái sử dụng dữ liệu trong bộ nhớ để giảm xử lý lặp lại.</p></a>
+</section>
+
+<section class="objective-panel">
+    <div>
+        <span class="eyebrow">SQL SERVER</span>
+        <h2>Dữ liệu sản phẩm được quản lý tập trung</h2>
+        <p>Ứng dụng sử dụng Entity Framework Core 8 và SQL Server, đồng thời có dữ liệu dự phòng để giao diện vẫn hoạt động khi CSDL tạm thời chưa kết nối.</p>
+    </div>
+    <a class="btn-main" asp-controller="Products" asp-action="Index">Mở sản phẩm</a>
+</section>

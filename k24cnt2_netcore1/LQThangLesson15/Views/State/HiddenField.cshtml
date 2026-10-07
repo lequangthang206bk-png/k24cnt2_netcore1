@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Hidden Fields";
+}
+
+<section class="page-heading">
+    <span class="eyebrow">FORM STATE</span>
+    <h1>Hidden Fields</h1>
+    <p>Dữ liệu được đặt trong input ẩn và gửi cùng biểu mẫu.</p>
+</section>
+
+<div class="form-panel">
+    <form asp-action="HiddenField" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="value" value="LQThangLesson15" />
+        <div class="hidden-preview"><span>Giá trị được gửi:</span><strong>LQThangLesson15</strong></div>
+        <button class="btn-main" type="submit">Gửi Hidden Field</button>
+    </form>
+    @if (ViewBag.HiddenValue != null)
+    {
+        <div class="result-panel">
+            <span>Giá trị nhận được</span>
+            <strong>@ViewBag.HiddenValue</strong>
+        </div>
+    }
+</div>

@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "TempData";
+}
+
+<section class="page-heading">
+    <span class="eyebrow">SERVER-SIDE FLOW</span>
+    <h1>TempData</h1>
+    <p>Dữ liệu được đặt ở request trước và đọc ở request kế tiếp.</p>
+</section>
+
+<div class="result-panel large">
+    <span>Kết quả</span>
+    <strong>@(ViewBag.Message ?? "Không có dữ liệu")</strong>
+    <a class="btn-main" asp-action="TempDataValue">Thực hiện lại</a>
+</div>

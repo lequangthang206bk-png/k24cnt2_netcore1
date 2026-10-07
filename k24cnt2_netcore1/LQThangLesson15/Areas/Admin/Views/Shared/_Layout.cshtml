@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LQT Admin</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/admin-layout.css" asp-append-version="true" />
+</head>
+<body class="admin-body">
+    <aside class="admin-sidebar">
+        <div class="brand"><div class="brand-mark">LQT</div><div><strong>LQT Admin</strong><small>Lesson 15</small></div></div>
+        <div class="admin-user"><div class="avatar">LT</div><div><strong>Lê Quang Thắng</strong><span>State Management</span></div></div>
+        <nav class="sidebar-nav">
+            <div class="nav-label">QUẢN TRỊ</div>
+            <a class="nav-link-item" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+            <a class="nav-link-item" asp-area="Admin" asp-controller="Products" asp-action="Index">Sản phẩm</a>
+            <a class="nav-link-item" asp-area="Admin" asp-controller="Categories" asp-action="Index">Danh mục</a>
+            <div class="nav-label">HỆ THỐNG</div>
+            <a class="nav-link-item" asp-area="" asp-controller="State" asp-action="Index">State Management</a>
+            <a class="nav-link-item" asp-area="" asp-controller="Home" asp-action="Index">Về cửa hàng</a>
+        </nav>
+    </aside>
+    <div class="admin-main">
+        <header class="admin-topbar"><strong>Trang quản trị</strong><a asp-area="" asp-controller="Home" asp-action="Index">Về trang chủ</a></header>
+        <main class="admin-content">@RenderBody()</main>
+        <footer class="admin-footer">LQT Lesson 15 · SQL Server</footer>
+    </div>
+</body>
+</html>

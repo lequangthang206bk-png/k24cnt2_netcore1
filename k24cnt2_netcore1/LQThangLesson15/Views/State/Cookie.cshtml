@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Cookies";
+}
+
+<section class="page-heading">
+    <span class="eyebrow">CLIENT-SIDE STATE</span>
+    <h1>Cookies</h1>
+    <p>Cookie được lưu ở trình duyệt và tự động gửi cùng request phù hợp.</p>
+</section>
+
+<div class="form-panel">
+    <form asp-action="Cookie" method="post">
+        @Html.AntiForgeryToken()
+        <label for="userName">Tên người dùng</label>
+        <input id="userName" name="userName" value="@ViewBag.CookieValue" placeholder="Nhập tên" />
+        <button class="btn-main" type="submit">Lưu Cookie</button>
+    </form>
+    <div class="result-panel">
+        <span>Giá trị Cookie hiện tại</span>
+        <strong>@(ViewBag.CookieValue ?? "Chưa có dữ liệu")</strong>
+    </div>
+</div>

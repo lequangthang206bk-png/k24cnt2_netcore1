@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+<section class="stat-grid">
+    <div class="stat-card"><strong>@ViewBag.ProductCount</strong><span>Sản phẩm trong SQL Server</span></div>
+    <div class="stat-card"><strong>8</strong><span>Kỹ thuật state management</span></div>
+    <div class="stat-card"><strong>30</strong><span>Phút Session timeout</span></div>
+    <div class="stat-card"><strong>10</strong><span>Phút Cache timeout</span></div>
+</section>
+<section class="panel">
+    <h2>Mục tiêu Lesson 15</h2>
+    <p>Phân biệt client-side state và server-side state; thực hành Cookies, Session, TempData, QueryString, Hidden Fields, HttpContext.Items và Cache.</p>
+    <a class="admin-button" asp-area="" asp-controller="State" asp-action="Index">Mở State Management</a>
+</section>
